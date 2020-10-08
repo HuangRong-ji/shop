@@ -1,6 +1,7 @@
 package com.shop.service;
 
 import com.shop.bean.Goods;
+import com.shop.bean.Page;
 
 import java.util.List;
 
@@ -14,4 +15,7 @@ public interface GoodsService {
     public Goods queryGoodsById(Integer id);
 
     public List<Goods> queryGoods();
+
+    public Page<Goods> page(int pageNo,int pageSize);
+
 }

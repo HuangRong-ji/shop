@@ -24,10 +24,9 @@ public class AdminFilter implements Filter {
 
         HttpSession session = request.getSession();
 
+
         String username = (String) session.getAttribute("username");
         String password = (String) session.getAttribute("password");
-//        System.out.println(username);
-//        System.out.println(password);
 
 //        String uri = request.getRequestURI();
 

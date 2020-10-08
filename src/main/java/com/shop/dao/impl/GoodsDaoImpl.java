@@ -37,4 +37,17 @@ public class GoodsDaoImpl extends BaseDao implements GoodsDao {
         String sql = "SELECT `id`,`name`,`price`,`producer`,`sales`,`stock`,`img_path` FROM `t_goods` ";
         return queryForList(Goods.class, sql);
     }
+
+    @Override
+    public int queryForPageTotalCount() {
+        String sql = "SELECT count(*) FROM `t_goods`";
+        Number count = (Number) queryForSingeValue(sql);
+        return count.intValue();
+    }
+
+    @Override
+    public List<Goods> queryForPageItems(int begin, int pageSize) {
+        String sql = "SELECT `id`,`name`,`price`,`producer`,`sales`,`stock`,`img_path` FROM `t_goods` limit ?,?";
+        return queryForList(Goods.class, sql, begin, pageSize);
+    }
 }

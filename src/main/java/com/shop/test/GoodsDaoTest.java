@@ -20,7 +20,8 @@ public class GoodsDaoTest {
 //                BigDecimal(9999), "Ð¡°®", 1100000, 0, null)));
 
 //        System.out.println(goodsDao.queryGoodsById(2));
-         System.out.println(goodsDao.queryGoods());
+        System.out.println(goodsDao.queryGoods());
+        System.out.println(goodsDao.queryForPageTotalCount());
     }
 
 }

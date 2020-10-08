@@ -21,7 +21,7 @@
     <%--    <div>--%>
     <%--        <a href="manager/GoodsServlet?action=list">商品管理</a>--%>
     <%--        <a href="order_manager.jsp">订单管理</a>--%>
-    <%--        <a href="index.jsp">返回商城</a>--%>
+    <%--        <a href="index2.jsp">返回商城</a>--%>
     <%--    </div>--%>
     <%@include file="/pages/common/manager_menu.jsp" %>
 </div>
@@ -36,7 +36,7 @@
             <td>库存</td>
             <td colspan="2">操作</td>
         </tr>
-        <c:forEach items="${requestScope.goods}" var="good">
+        <c:forEach items="${requestScope.page.items}" var="good">
             <tr>
                 <td>${good.name}</td>
                 <td>${good.price}</td>
@@ -44,7 +44,7 @@
                 <td>${good.sales}</td>
                 <td>${good.stock}</td>
 
-                <td><a href="GoodsServlet?action=getGoods&id=${good.id}">修改</a></td>
+                <td><a href="GoodsServlet?action=getGoods&id=${good.id}&pageNo=${requestScope.page.pageNo}">修改</a></td>
                 <td><a class="deleteClass" href="GoodsServlet?action=delete&id=${good.id}">删除</a></td>
             </tr>
             </tr>
@@ -61,6 +61,8 @@
             <td><a href="./pages/manager/goods_edit.jsp">添加商品</a></td>
         </tr>
     </table>
+    <%--    分页代码--%>
+    <%@include file="/pages/common/page_nav.jsp" %>
 </div>
 
 <%@include file="/pages/common/footer.jsp" %>

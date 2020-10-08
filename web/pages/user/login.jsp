@@ -5,6 +5,24 @@
     <title>网上商城会员登录页面</title>
 
     <%@include file="/pages/common/head.jsp" %>
+
+    <%--    <script type="text/javascript">--%>
+    <%--        $(function () {--%>
+    <%--            $("#code_img").click(function () {--%>
+    <%--                // 在事件响应的function 函数中有一个this 对象。这个this 对象，是当前正在响应事件的dom 对象--%>
+    <%--                // src 属性表示验证码 img 标签的 图片路径。它可读，可写--%>
+    <%--                // alert(this.src);--%>
+    <%--                this.src = "${basePath}kaptcha.jpg?d=" + new Date();--%>
+    <%--            });--%>
+    <%--        })--%>
+
+    <%--        function fun(obj) {--%>
+    <%--            alert(this.src);--%>
+
+    <%--            $(obj).src = "${basePath}kaptcha.jpg?d=" + new Date();--%>
+    <%--        }--%>
+
+    <%--    </script>--%>
 </head>
 <body>
 <div id="login_header">
@@ -22,7 +40,7 @@
             <div class="login_box">
                 <div class="tit">
                     <h1>网上商城会员</h1>
-                    <a href="pages/user/regist.html">立即注册</a>
+                    <a href="pages/user/regist.jsp">立即注册</a>
                 </div>
                 <div class="msg_cont">
                     <b></b>
@@ -41,7 +59,13 @@
                                name="password"/>
                         <br/>
                         <br/>
+                        验证码：<input type="text" style="width: 80px;" name="code">
+                        <img src="kaptcha.jpg" alt="" style="width: 100px; height: 28px;" id="code_img"
+                             onclick="this.src='kaptcha.jpg'">
+                        <br/>
+                        <br/>
                         <input type="submit" value="登录" id="sub_btn"/>
+
                     </form>
                 </div>
 

@@ -14,4 +14,8 @@ public interface GoodsDao {
     public Goods queryGoodsById(Integer id);
 
     public List<Goods> queryGoods();
+
+    public int queryForPageTotalCount();
+
+    public List<Goods> queryForPageItems(int begin, int pageSize);
 }
